@@ -10,6 +10,7 @@ public class Marble_Movement : MonoBehaviour
 
     public bool debug = true;
     public float speed = 10;
+    public Transform arrowIndicator;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +29,20 @@ public class Marble_Movement : MonoBehaviour
         if(debug) {
             Debug.DrawRay(this.transform.position, dir * 2, Color.black, 0.5f);
         }
+
+        
+    }
+
+    void LateUpdate(){
+        arrowIndicator.rotation = Quaternion.LookRotation(dir, Vector3.up);
+        Vector3 scale = Vector3.one;
+        scale.z = dir.magnitude;
+        arrowIndicator.localScale = scale;
     }
 
     void FixedUpdate(){
         rb.AddForce(dir * speed);
     }
+
+    
 }
