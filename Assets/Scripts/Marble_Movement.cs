@@ -51,7 +51,14 @@ public class Marble_Movement : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
-        NextScreen.SetActive(true);
+        if(other.CompareTag("NextLevel")){
+            NextScreen.SetActive(true);
+        }
+        
+        if(other.CompareTag("Respawn")){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Debug.Log("I've died!");
+        }
     }
 
     public void Next(){
