@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Marble_Movement : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Marble_Movement : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();    
-   //     NextScreen.setActive(false);
+        NextScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,6 +48,14 @@ public class Marble_Movement : MonoBehaviour
 
     void FixedUpdate(){
         rb.AddForce(dir * speed);
+    }
+
+    void OnTriggerEnter(Collider other){
+        NextScreen.SetActive(true);
+    }
+
+    public void Next(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     
