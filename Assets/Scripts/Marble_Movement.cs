@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Marble_Movement : MonoBehaviour
 {
@@ -12,10 +13,14 @@ public class Marble_Movement : MonoBehaviour
     public float speed = 10;
     public Transform arrowIndicator;
 
+    public GameObject NextScreen;
+    public TextMeshProUGUI Time;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();    
+   //     NextScreen.setActive(false);
     }
 
     // Update is called once per frame

@@ -2408,6 +2408,8 @@ MonoBehaviour:
   debug: 1
   speed: 50
   arrowIndicator: {fileID: 40776424}
+  NextScreen: {fileID: 0}
+  Time: {fileID: 0}
 --- !u!54 &867839784
 Rigidbody:
   m_ObjectHideFlags: 0
