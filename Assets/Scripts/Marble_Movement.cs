@@ -17,11 +17,21 @@ public class Marble_Movement : MonoBehaviour
     public GameObject NextScreen;
     public TextMeshProUGUI Time;
 
+    //public bool FireworksBool = false;
+    ParticleSystem RightFireworks;
+    ParticleSystem LeftFireworks;
+    public GameObject RFireworks;
+    public GameObject LFireworks;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();    
         NextScreen.SetActive(false);
+
+        RightFireworks = RFireworks.GetComponent<ParticleSystem>(); 
+        LeftFireworks = LFireworks.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -50,9 +60,19 @@ public class Marble_Movement : MonoBehaviour
         rb.AddForce(dir * speed);
     }
 
+    // Scene currentScene = SceneManager.GetActiveScene ();
+    // string sceneName = currentScene.name;
+
     void OnTriggerEnter(Collider other){
         if(other.CompareTag("NextLevel")){
             NextScreen.SetActive(true);
+
+           // if(sceneName == "Level4"){ //If in lvl 4, set off fireworks! Otherwise, no fireworks
+                RightFireworks.Play();
+                LeftFireworks.Play();
+           // }
+            
+           // FireworksBool = true;
         }
         
         if(other.CompareTag("Respawn")){
