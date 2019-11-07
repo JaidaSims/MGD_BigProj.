@@ -12,6 +12,9 @@ public class Marble_Movement : MonoBehaviour
 
     public bool debug = true;
     public float speed = 10;
+
+    Vector3 calibrateDir;
+
     public Transform arrowIndicator;
 
     public GameObject NextScreen;
@@ -32,6 +35,8 @@ public class Marble_Movement : MonoBehaviour
 
         RightFireworks = RFireworks.GetComponent<ParticleSystem>(); 
         LeftFireworks = LFireworks.GetComponent<ParticleSystem>();
+
+        Calibrate();
     }
 
     // Update is called once per frame
@@ -39,8 +44,8 @@ public class Marble_Movement : MonoBehaviour
     {
         // dir = Vector3.zero; //New Vector3(0, 0, 0)
 
-        dir.x = Input.acceleration.x;
-        dir.z = Input.acceleration.y;
+        dir.x = Input.acceleration.x - calibrateDir.x;
+        dir.z = Input.acceleration.y - calibrateDir.z;
 
         if(debug) {
             Debug.DrawRay(this.transform.position, dir * 2, Color.black, 0.5f);
@@ -89,5 +94,27 @@ public class Marble_Movement : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
     }
 
-    
+    public void Calibrate(){
+        calibrateDir.x = Input.acceleration.x;
+        calibrateDir.z = Input.acceleration.y;
+        Debug.Log("Calibrated Dir = " + calibrateDir);
+    }
+
+
+    public float jumpSpeed = 5f;
+    public void Jump(){
+    if(isGrounded){
+         rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+    }
+    }
+
+    bool isGrounded = true;
+
+    void OnCollisionEnter(){
+        isGrounded = true;
+    }
+
+    void OnCollisionExit(){
+        isGrounded = false;
+    }
 }
