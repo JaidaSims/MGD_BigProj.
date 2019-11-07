@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NextLevel
   - Gate
+  - Coin
   layers:
   - Default
   - TransparentFX
