@@ -18,10 +18,15 @@ public class Marble_Movement : MonoBehaviour
     public Transform arrowIndicator;
     ////////////////
 
+
     //END OF LVL SCREEN
     public GameObject NextScreen;
-    public TextMeshProUGUI Time;
+    public TextMeshProUGUI TimeTxt;
+    public TextMeshProUGUI TimeTxtEnd;
+    public GameObject TimeTxtUI;
+    public GameObject TimeTxtGO;
     ///////////////
+
 
     //public bool FireworksBool = false;
 
@@ -32,16 +37,24 @@ public class Marble_Movement : MonoBehaviour
     public GameObject LFireworks;
     ////////////////
 
+
     //VARIOUS 
     public float jumpSpeed = 5f;
     public int score = 0;
+    public TextMeshProUGUI Score;
+    public TextMeshProUGUI ScoreEnd;
+    public GameObject ScoreTxtUI;
+    public GameObject ScoreGO;
     public GameObject JumpButton;
+
+    float timer = 0f;
     ////////////////
     
 
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = this.GetComponent<Rigidbody>();    
         NextScreen.SetActive(false);
 
@@ -57,6 +70,9 @@ public class Marble_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        TimeTxt.text = timer.ToString("F0");
+
         // dir = Vector3.zero; //New Vector3(0, 0, 0)
 
         dir.x = Input.acceleration.x - calibrateDir.x;
@@ -99,6 +115,16 @@ public class Marble_Movement : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.CompareTag("NextLevel")){
             NextScreen.SetActive(true);
+            Time.timeScale = 0;
+
+            //Time & Score
+            TimeTxtEnd.text = timer.ToString("F0");
+            ScoreEnd.text = score.ToString();
+
+            ScoreGO.SetActive(false);
+            ScoreTxtUI.SetActive(false);
+            TimeTxtGO.SetActive(false);
+            TimeTxtUI.SetActive(false);
 
            // if(sceneName == "Level4"){ //If in lvl 4, set off fireworks! Otherwise, no fireworks
                 RightFireworks.Play();
@@ -106,7 +132,7 @@ public class Marble_Movement : MonoBehaviour
            // }
             
            // FireworksBool = true;
-        }
+        } 
         
         if(other.CompareTag("Respawn")){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -115,6 +141,7 @@ public class Marble_Movement : MonoBehaviour
 
         if(other.gameObject.CompareTag("Coin")){
             score += 50;
+            Score.text = score.ToString();
             Destroy(other.gameObject);
             //Play coin audio??
         }
@@ -128,7 +155,9 @@ public class Marble_Movement : MonoBehaviour
     }
 
     public void Next(){
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
     public void Replay(){
