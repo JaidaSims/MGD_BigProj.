@@ -137,7 +137,7 @@ public class Marble_Movement : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.CompareTag("NextLevel")){
             NextScreen.SetActive(true);
-            Time.timeScale = 0;
+           // Time.timeScale = 0;
 
             //Time & Score
             TimeTxtEnd.text = timer.ToString("F0");
