@@ -37,6 +37,12 @@ public class Marble_Movement : MonoBehaviour
     public GameObject LFireworks;
     ////////////////
 
+    
+    //AUDIO
+    //To be done in near future
+
+    ///////////////
+
 
     //VARIOUS 
     public float jumpSpeed = 5f;
@@ -49,6 +55,17 @@ public class Marble_Movement : MonoBehaviour
 
     float timer = 0f;
     ////////////////
+
+
+    //GATE
+    bool hasKey = false;
+    ////////////////
+
+    //FLYTEXT
+    public GameObject keyMessage;
+    public GameObject scoreMessage;
+    public GameObject jumpMessage;
+    //////////////
     
 
     // Start is called before the first frame update
@@ -65,6 +82,11 @@ public class Marble_Movement : MonoBehaviour
         startPos = this.transform.position;
 
         JumpButton.SetActive(canJump); //if can jump, show button 
+
+        keyMessage.SetActive(false);
+        scoreMessage.SetActive(false);
+        jumpMessage.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -140,6 +162,7 @@ public class Marble_Movement : MonoBehaviour
         }
 
         if(other.gameObject.CompareTag("Coin")){
+            StartCoroutine(FlyScore());
             score += 50;
             Score.text = score.ToString();
             Destroy(other.gameObject);
@@ -147,9 +170,21 @@ public class Marble_Movement : MonoBehaviour
         }
 
            if(other.gameObject.name == "JumpPowerUp"){
+                StartCoroutine(FlyJump());
                 canJump = true; 
                 JumpButton.SetActive(canJump);
                 Destroy(other.gameObject);  
+        }
+            
+        if(other.gameObject.CompareTag("Key")){
+            StartCoroutine(FlyKey());
+            hasKey = true;
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.name == "Gate"){
+            if(hasKey){
+                Destroy(other.gameObject);
+            }
         }
  
     }
@@ -185,5 +220,24 @@ public class Marble_Movement : MonoBehaviour
 
     void OnCollisionExit(){
         isGrounded = false;
+    }
+
+    //Will allow text to flash quickly accross the screen
+    IEnumerator FlyKey(){
+        keyMessage.SetActive(true);
+        yield return new WaitForSeconds(.9f);
+        keyMessage.SetActive(false);        
+    }
+
+    IEnumerator FlyScore(){
+        scoreMessage.SetActive(true);
+        yield return new WaitForSeconds(.9f);
+        scoreMessage.SetActive(false);        
+    }
+
+    IEnumerator FlyJump(){
+        jumpMessage.SetActive(true);
+        yield return new WaitForSeconds(.9f);
+        jumpMessage.SetActive(false);        
     }
 }
