@@ -18,8 +18,8 @@ public class MusicManager : MonoBehaviour
 
     public int mainMenuIndex = 0;
     public int world1Index = 1;
-    public int world2Index = 4; //Different theme/music for next set of level
-    public int world3Index = 7;
+    public int world2Index = 3; //Different theme/music for next set of level
+    public int world3Index = 5;
     
     public List<AudioClip> songs = new List<AudioClip>();
     private AudioSource aud;

@@ -9,6 +9,8 @@ TagManager:
   - Coin
   - Key
   - Music
+  - CustomCam
+  - NormalCam
   layers:
   - Default
   - TransparentFX

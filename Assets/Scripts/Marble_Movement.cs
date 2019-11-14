@@ -66,6 +66,11 @@ public class Marble_Movement : MonoBehaviour
     public GameObject scoreMessage;
     public GameObject jumpMessage;
     //////////////
+
+    //CAMERA
+    public Camera mainCam;
+    //private Camera mainCam;
+    ///////////////
     
 
     // Start is called before the first frame update
@@ -87,6 +92,7 @@ public class Marble_Movement : MonoBehaviour
         scoreMessage.SetActive(false);
         jumpMessage.SetActive(false);
 
+       // mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -186,9 +192,26 @@ public class Marble_Movement : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+
+        if(other.gameObject.CompareTag("CustomCam")){
+            mainCam.gameObject.SetActive(false);
+            other.transform.GetChild(0).gameObject.SetActive(true);
+        }
+
+        //  if(other.gameObject.CompareTag("NormalCam")){
+        //      mainCam.gameObject.SetActive(true);
+            
+        //  }
  
     }
 
+    void OnTriggerExit(Collider other){
+        if(other.gameObject.CompareTag("CustomCam")){
+            mainCam.gameObject.SetActive(true);
+            other.transform.GetChild(0).gameObject.SetActive(false);
+        }
+
+    }
     public void Next(){
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -209,6 +232,12 @@ public class Marble_Movement : MonoBehaviour
     if(isGrounded && canJump){
          rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
     }
+    }
+
+    public void Teleport(){
+        Debug.Log("Teleporting dir = " + dir);
+        //Debug.Log("dir = " + dir);
+        this.transform.Translate(arrowIndicator.forward * 3, Space.World);
     }
 
     bool isGrounded = true;
