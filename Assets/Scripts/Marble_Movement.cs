@@ -54,6 +54,12 @@ public class Marble_Movement : MonoBehaviour
     public GameObject JumpButton;
 
     float timer = 0f;
+    bool isGrounded = true;
+    bool canJump = false;
+
+        //ZIPPING
+        public GameObject ZipButton;
+        bool canZip = false;
     ////////////////
 
 
@@ -65,6 +71,7 @@ public class Marble_Movement : MonoBehaviour
     public GameObject keyMessage;
     public GameObject scoreMessage;
     public GameObject jumpMessage;
+    public GameObject zipMessage;
     //////////////
 
     //CAMERA
@@ -87,10 +94,12 @@ public class Marble_Movement : MonoBehaviour
         startPos = this.transform.position;
 
         JumpButton.SetActive(canJump); //if can jump, show button 
+        ZipButton.SetActive(canZip);
 
         keyMessage.SetActive(false);
         scoreMessage.SetActive(false);
         jumpMessage.SetActive(false);
+        zipMessage.SetActive(false);
 
        // mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
@@ -181,6 +190,14 @@ public class Marble_Movement : MonoBehaviour
                 JumpButton.SetActive(canJump);
                 Destroy(other.gameObject);  
         }
+
+        //Zipping/Teleporting
+            if(other.gameObject.name == "ZipPowerUp"){
+                StartCoroutine(FlyZip());
+                canZip = true;
+                ZipButton.SetActive(canZip);
+                Destroy(other.gameObject);
+            }
             
         if(other.gameObject.CompareTag("Key")){
             StartCoroutine(FlyKey());
@@ -213,7 +230,7 @@ public class Marble_Movement : MonoBehaviour
 
     }
     public void Next(){
-        Time.timeScale = 1;
+     //   Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
     }
@@ -231,7 +248,7 @@ public class Marble_Movement : MonoBehaviour
     public void Jump(){
     if(isGrounded && canJump){
          rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
-    }
+        }
     }
 
     public void Teleport(){
@@ -240,8 +257,7 @@ public class Marble_Movement : MonoBehaviour
         this.transform.Translate(arrowIndicator.forward * 3, Space.World);
     }
 
-    bool isGrounded = true;
-    bool canJump = false;
+    
 
     void OnCollisionEnter(){       
         isGrounded = true;
@@ -268,5 +284,11 @@ public class Marble_Movement : MonoBehaviour
         jumpMessage.SetActive(true);
         yield return new WaitForSeconds(.9f);
         jumpMessage.SetActive(false);        
+    }
+
+    IEnumerator FlyZip(){
+        zipMessage.SetActive(true);
+        yield return new WaitForSeconds(.9f);
+        zipMessage.SetActive(false);
     }
 }
