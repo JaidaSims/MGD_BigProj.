@@ -58,8 +58,8 @@ public class Marble_Movement : MonoBehaviour
     bool canJump = false;
 
         //ZIPPING
-        public GameObject ZipButton;
-        bool canZip = false;
+       // public GameObject ZipButton;
+       // bool canZip = false;
     ////////////////
 
 
@@ -71,7 +71,7 @@ public class Marble_Movement : MonoBehaviour
     public GameObject keyMessage;
     public GameObject scoreMessage;
     public GameObject jumpMessage;
-    public GameObject zipMessage;
+   // public GameObject zipMessage;
     //////////////
 
     //CAMERA
@@ -94,12 +94,12 @@ public class Marble_Movement : MonoBehaviour
         startPos = this.transform.position;
 
         JumpButton.SetActive(canJump); //if can jump, show button 
-        ZipButton.SetActive(canZip);
+       // ZipButton.SetActive(canZip);
 
         keyMessage.SetActive(false);
         scoreMessage.SetActive(false);
         jumpMessage.SetActive(false);
-        zipMessage.SetActive(false);
+    //    zipMessage.SetActive(false);
 
        // mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
@@ -192,12 +192,12 @@ public class Marble_Movement : MonoBehaviour
         }
 
         //Zipping/Teleporting
-            if(other.gameObject.name == "ZipPowerUp"){
-                StartCoroutine(FlyZip());
-                canZip = true;
-                ZipButton.SetActive(canZip);
-                Destroy(other.gameObject);
-            }
+            // if(other.gameObject.name == "ZipPowerUp"){
+            //     StartCoroutine(FlyZip());
+            //     canZip = true;
+            //     ZipButton.SetActive(canZip);
+            //     Destroy(other.gameObject);
+            // }
             
         if(other.gameObject.CompareTag("Key")){
             StartCoroutine(FlyKey());
@@ -286,9 +286,9 @@ public class Marble_Movement : MonoBehaviour
         jumpMessage.SetActive(false);        
     }
 
-    IEnumerator FlyZip(){
-        zipMessage.SetActive(true);
-        yield return new WaitForSeconds(.9f);
-        zipMessage.SetActive(false);
-    }
+    // IEnumerator FlyZip(){
+    //     zipMessage.SetActive(true);
+    //     yield return new WaitForSeconds(.9f);
+    //     zipMessage.SetActive(false);
+    // }
 }

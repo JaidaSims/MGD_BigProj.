@@ -1553,7 +1553,7 @@ Transform:
   m_LocalScale: {x: 0.4271619, y: 1.2086545, z: 0.4271619}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 270, y: 180, z: -66.24701}
 --- !u!1001 &243822931
 PrefabInstance:
@@ -7352,7 +7352,7 @@ Transform:
   m_LocalScale: {x: 0.69586, y: 0.69586, z: 0.2619504}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 88
+  m_RootOrder: 89
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &434592481
 PrefabInstance:
@@ -14687,7 +14687,7 @@ Transform:
   m_LocalScale: {x: 0.69586, y: 0.69586, z: 0.2619504}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 89
+  m_RootOrder: 91
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &899979308
 PrefabInstance:
@@ -14974,7 +14974,7 @@ Transform:
   m_LocalScale: {x: 0.69586, y: 0.69586, z: 0.2619504}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 72
+  m_RootOrder: 74
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &968264510
 GameObject:
@@ -15157,7 +15157,7 @@ Transform:
   m_LocalScale: {x: 0.69586, y: 0.69586, z: 0.2619504}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 86
+  m_RootOrder: 87
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &984733817
 GameObject:
@@ -16255,7 +16255,7 @@ Transform:
   m_LocalScale: {x: 3, y: 5.5929003, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 180.2, y: -284.99902, z: 89.254}
 --- !u!1 &1220697509
 GameObject:
@@ -22049,7 +22049,7 @@ Transform:
   m_Children:
   - {fileID: 647501752}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: -21.248001, z: -180.00002}
 --- !u!1 &1401834490
 GameObject:
@@ -22200,7 +22200,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Level 5 Time:'
+  m_text: 'Level 6 Time:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -23695,7 +23695,7 @@ Transform:
   m_LocalScale: {x: 0.69586, y: 0.69586, z: 0.2619504}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 71
+  m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1676594047
 PrefabInstance:
@@ -28928,7 +28928,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: You completed Lvl 5!
+  m_text: You completed Lvl 6!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -29177,7 +29177,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Level 5 Score:'
+  m_text: 'Level 6 Score:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -29636,7 +29636,7 @@ Transform:
   m_LocalScale: {x: 0.69586, y: 0.69586, z: 0.2619504}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 85
+  m_RootOrder: 86
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1894683183
 PrefabInstance:
@@ -30521,7 +30521,7 @@ Transform:
   m_LocalScale: {x: 2.660226, y: 2.660226, z: 2.405635}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086818548
 GameObject:
