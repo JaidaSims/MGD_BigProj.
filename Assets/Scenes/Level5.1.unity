@@ -7352,7 +7352,7 @@ Transform:
   m_LocalScale: {x: 0.69586, y: 0.69586, z: 0.2619504}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 89
+  m_RootOrder: 90
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &434592481
 PrefabInstance:
@@ -14342,6 +14342,7 @@ GameObject:
   - component: {fileID: 867839783}
   - component: {fileID: 867839789}
   - component: {fileID: 867839790}
+  - component: {fileID: 867839791}
   m_Layer: 0
   m_Name: Marble
   m_TagString: Player
@@ -14378,11 +14379,9 @@ MonoBehaviour:
   ScoreTxtUI: {fileID: 810089484}
   ScoreGO: {fileID: 459185019}
   JumpButton: {fileID: 320016566}
-  ZipButton: {fileID: 0}
   keyMessage: {fileID: 100856813}
   scoreMessage: {fileID: 984733817}
   jumpMessage: {fileID: 178759378}
-  zipMessage: {fileID: 0}
   mainCam: {fileID: 0}
 --- !u!54 &867839784
 Rigidbody:
@@ -14598,6 +14597,102 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &867839791
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867839782}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3eba813df94aa9c43ab180e5cae94112, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &884787639
 GameObject:
   m_ObjectHideFlags: 0
@@ -14687,7 +14782,7 @@ Transform:
   m_LocalScale: {x: 0.69586, y: 0.69586, z: 0.2619504}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 91
+  m_RootOrder: 93
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &899979308
 PrefabInstance:
@@ -14974,7 +15069,7 @@ Transform:
   m_LocalScale: {x: 0.69586, y: 0.69586, z: 0.2619504}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 74
+  m_RootOrder: 76
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &968264510
 GameObject:
@@ -16255,7 +16350,7 @@ Transform:
   m_LocalScale: {x: 3, y: 5.5929003, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 180.2, y: -284.99902, z: 89.254}
 --- !u!1 &1220697509
 GameObject:
@@ -23695,7 +23790,7 @@ Transform:
   m_LocalScale: {x: 0.69586, y: 0.69586, z: 0.2619504}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 72
+  m_RootOrder: 73
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1676594047
 PrefabInstance:
@@ -30521,7 +30616,7 @@ Transform:
   m_LocalScale: {x: 2.660226, y: 2.660226, z: 2.405635}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086818548
 GameObject:

@@ -39,8 +39,8 @@ public class Marble_Movement : MonoBehaviour
 
     
     //AUDIO
-    //To be done in near future
-
+    //Coin Sound
+    private AudioSource Aud;
     ///////////////
 
 
@@ -102,6 +102,10 @@ public class Marble_Movement : MonoBehaviour
     //    zipMessage.SetActive(false);
 
        // mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+       
+       //SOUND
+        Aud = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -180,6 +184,7 @@ public class Marble_Movement : MonoBehaviour
             StartCoroutine(FlyScore());
             score += 50;
             Score.text = score.ToString();
+            Aud.Play();
             Destroy(other.gameObject);
             //Play coin audio??
         }
