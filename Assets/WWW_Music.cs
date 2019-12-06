@@ -27,7 +27,8 @@ public class WWW_Music : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        aud = this.GetComponent<AudioSource>();
+        StartCoroutine(GetAudioFromWeb());  
     }
 
 }
